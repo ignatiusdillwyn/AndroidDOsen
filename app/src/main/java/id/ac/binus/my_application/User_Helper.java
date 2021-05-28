@@ -29,6 +29,54 @@ public class User_Helper {
         helper.close();
     }
 
+    public void updateUsername (String username, String password, String new_username){
+        SQLiteDatabase db = helper.getWritableDatabase();
+        db.execSQL("UPDATE user " +
+                "SET username = '"+new_username+"' WHERE username = '"+username+"' AND password = '"+password+"' ");
+        db.close();
+        helper.close();
+    }
+
+    public void updatePassword (String username, String password, String new_password){
+        SQLiteDatabase db = helper.getWritableDatabase();
+        db.execSQL("UPDATE user " +
+                "SET password = '"+new_password+"' WHERE username = '"+username+"' AND password = '"+password+"' ");
+        db.close();
+        helper.close();
+    }
+
+    public void updateEmail (String username, String password, String new_email){
+        SQLiteDatabase db = helper.getWritableDatabase();
+        db.execSQL("UPDATE user " +
+                "SET email = '"+new_email+"' WHERE username = '"+username+"' AND password = '"+password+"' ");
+        db.close();
+        helper.close();
+    }
+
+    public void updatePhone_number (String username, String password, String new_phone_number){
+        SQLiteDatabase db = helper.getWritableDatabase();
+        db.execSQL("UPDATE user " +
+                "SET phone = '"+new_phone_number+"' WHERE username = '"+username+"' AND password = '"+password+"' ");
+        db.close();
+        helper.close();
+    }
+
+    public void updateDoB (String username, String password, String new_DoB){
+        SQLiteDatabase db = helper.getWritableDatabase();
+        db.execSQL("UPDATE user " +
+                "SET dob = '"+new_DoB+"' WHERE username = '"+username+"' AND password = '"+password+"' ");
+        db.close();
+        helper.close();
+    }
+
+    public void updateAddress (String username, String password, String new_Address){
+        SQLiteDatabase db = helper.getWritableDatabase();
+        db.execSQL("UPDATE user " +
+                "SET dob = '"+new_Address+"' WHERE username = '"+username+"' AND password = '"+password+"' ");
+        db.close();
+        helper.close();
+    }
+
     public User getUser(String username, String password){
         SQLiteDatabase db = helper.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM user " +

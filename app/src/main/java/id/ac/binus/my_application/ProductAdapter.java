@@ -87,6 +87,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
             super(itemView);
 
             //get component
+            prod_image_iv = itemView.findViewById(R.id.prod_image_iv);
             prod_name_txt = itemView.findViewById(R.id.prod_name_txt);
             prod_rate_txt = itemView.findViewById(R.id.prod_rate_txt);
             prod_price_txt = itemView.findViewById(R.id.prod_price_txt);
