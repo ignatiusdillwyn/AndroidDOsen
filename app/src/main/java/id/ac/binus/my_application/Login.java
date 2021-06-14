@@ -46,12 +46,21 @@ public class Login extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String usernameee = username.getText().toString();
+                String passworddd = password.getText().toString();
                 User_Helper helper = new User_Helper(getApplicationContext());
                 User user = helper.getUser(username.getText().toString(), password.getText().toString());
 
-                if (user!=null){
-
+                if (usernameee.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "You Must Filled the Username", Toast.LENGTH_SHORT).show();
+                }
+                else if (passworddd.isEmpty()){
+                    Toast.makeText(getApplicationContext(), "You Must Filled the Password", Toast.LENGTH_SHORT).show();
+                }
+                else if (user!=null){
                     SharedPreferences.Editor sp = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit();
+                    int user_id = user.getUser_id();
+                    sp.putInt("user_id", user.getUser_id());
                     sp.putString("username", user.getUsername());
                     sp.putString("password", user.getPassword());
                     sp.apply();
@@ -61,11 +70,8 @@ public class Login extends AppCompatActivity {
                     startActivity(intent);
                 }
                 else {
-                    Toast.makeText(getApplicationContext(), "Wrong Username and Password", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Wrong Username or Password", Toast.LENGTH_SHORT).show();
                 }
-
-
-
             }
         });
     }

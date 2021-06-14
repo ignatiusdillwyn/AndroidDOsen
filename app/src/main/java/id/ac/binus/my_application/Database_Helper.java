@@ -44,11 +44,9 @@ public class Database_Helper extends SQLiteOpenHelper {
         db.execSQL("CREATE TABLE transactions (" +
                 "transaction_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
                 "user_id TEXT NOT NULL,"+
-                "product_id TEXT NOT NULL,"+
                 "transaction_nominal INTEGER NOT NULL,"+
                 "transaction_date TEXT NOT NULL,"+
-                "FOREIGN KEY (user_id) REFERENCES user (user_id) ON UPDATE CASCADE ON DELETE CASCADE," +
-                "FOREIGN KEY (product_id) REFERENCES product (product_id ) ON UPDATE CASCADE ON DELETE CASCADE" +
+                "FOREIGN KEY (user_id) REFERENCES user (user_id) ON UPDATE CASCADE ON DELETE CASCADE "+
                 ")");
         //BUAT TABEL TRANSAKSI
 
@@ -62,6 +60,17 @@ public class Database_Helper extends SQLiteOpenHelper {
                 ")");
         //BUAT TABEL WHISLIST
 
+        //BUAT TABEL CART
+        db.execSQL("CREATE TABLE carts (" +
+                "cart_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL," +
+                "user_id TEXT NOT NULL,"+
+                "product_id TEXT NOT NULL,"+
+                "qty INTEGER," +
+                "FOREIGN KEY (user_id) REFERENCES user (user_id) ON UPDATE CASCADE ON DELETE CASCADE," +
+                "FOREIGN KEY (product_id) REFERENCES product (product_id ) ON UPDATE CASCADE ON DELETE CASCADE" +
+                ")");
+        //BUAT TABEL CART
+
     }
 
     @Override
@@ -70,6 +79,7 @@ public class Database_Helper extends SQLiteOpenHelper {
         db.execSQL("DROP TABLE IF EXISTS product");
         db.execSQL("DROP TABLE IF EXISTS transactions");
         db.execSQL("DROP TABLE IF EXISTS whislists");
+        db.execSQL("DROP TABLE IF EXISTS carts");
         onCreate(db);
     }
 }

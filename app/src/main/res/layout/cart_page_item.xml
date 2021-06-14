@@ -3,11 +3,11 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="8dp"
     android:padding="10dp"
-    android:id="@+id/homepage_cv"
+    android:layout_margin="8dp"
     android:elevation="10dp"
-    app:cardCornerRadius="15dp">
+    app:cardCornerRadius="15dp"
+    android:id="@+id/cart_page_cv">
 
     <RelativeLayout
         android:id="@+id/relative_1"
@@ -50,31 +50,31 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_below="@+id/prod_price_txt"
-            android:layout_toRightOf="@id/prod_image_iv">
+            android:layout_below="@id/prod_price_txt"
+            android:layout_toRightOf="@id/prod_image_iv"
+            android:orientation="horizontal">
 
             <Button
-                android:id="@+id/cart_btn"
+                android:id="@+id/min_btn"
+                android:layout_width="50sp"
+                android:layout_height="40sp"
+                android:text="MIN"
+                android:textSize="8sp"/>
+
+            <EditText
+                android:id="@+id/jumlah_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="4dp"
-                android:text="Cart"/>
+                android:text="1"/>
 
             <Button
-                android:id="@+id/whislist_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Whislist"
-                android:layout_margin="4dp"/>
-
-
+                android:id="@+id/plus_btn"
+                android:layout_width="60sp"
+                android:layout_height="40sp"
+                android:text="PlUS"
+                android:textSize="8sp"/>
 
         </LinearLayout>
-
-
-
-
 
     </RelativeLayout>
 

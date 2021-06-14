@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.My_Application">
-        <activity android:name=".Profile_Page"></activity>
+        <activity android:name=".Transaction_Proof_Page"></activity>
+        <activity android:name=".Checkout_Page" />
+        <activity android:name=".Whislist_Page" />
+        <activity android:name=".Profile_Page" />
         <activity android:name=".Cart_Page" />
         <activity android:name=".HomePage" />
         <activity android:name=".Login">
